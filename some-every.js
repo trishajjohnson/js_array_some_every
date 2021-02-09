@@ -7,12 +7,9 @@ Examples:
 */
 
 function hasOddNumber(arr) {
-    arr.some(function(num){
-        if(num % 2 !== 0){
-            return true;
-        }
-    });
-    return false;
+    return arr.some(function(val){
+        return val % 2 !== 0;
+    });   
 }
 
 /*
@@ -27,10 +24,9 @@ function hasAZero(num) {
     const str = num.toString();
     const arr = str.split('');
     
-    arr.some(function(value){
-        return value.indexOf('0');
-    });
-    return false;
+    return arr.some(function(value){
+        return value === '0';
+    });    
 }
 
 /*
@@ -42,12 +38,9 @@ Examples:
 */
 
 function hasOnlyOddNumbers(arr) {
-    arr.every(function(value){
-        if(value % 2 !== 0){
-            return false;
-        }
-    });
-    return true;
+    return arr.every(function(value){
+        return value % 2 !== 0;
+    });   
 }
 
 /*
@@ -61,8 +54,7 @@ Examples:
 function hasNoDuplicates(arr) {
     return arr.every(function(val){
         return arr.indexOf(val) === arr.lastIndexOf(val);
-    });
-    return false;
+    });    
 }
 
 /*
@@ -81,10 +73,9 @@ Examples:
 */
 
 function hasCertainKey(arr, key) {
-    arr.every(function(value){
+    return arr.every(function(value){
         return key in value;
-    })
-    return false;
+    });    
 }
 
 /*
@@ -104,8 +95,7 @@ Examples:
 */
 
 function hasCertainValue(arr, key, searchValue) {
-    arr.every(function(value){
+    return arr.every(function(value){
         return value[key] === searchValue;
     });
-    return false;
 }
